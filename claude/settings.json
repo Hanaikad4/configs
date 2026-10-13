@@ -1,16 +1,16 @@
 {
-  "model": "sonnet",
-  "autoUpdatesChannel": "latest",
-  "theme": "dark",
-  "modelSettings": {
-    "claude-sonnet-5": {
-      "effortLevel": "medium"
-    }
-  },
   "permissions": {
     "deny": [
       "Bash(git commit:*)",
       "Bash(git push:*)"
     ]
-  }
+  },
+  "model": "opus",
+  "modelSettings": {
+    "claude-sonnet-5": {
+      "effortLevel": "medium"
+    }
+  },
+  "autoUpdatesChannel": "latest",
+  "theme": "dark"
 }
