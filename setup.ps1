@@ -91,9 +91,10 @@ $links = @(
        Target = "$HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
        Type   = "File" }
 
-    # @{ Source = "nvim"
-    #    Target = "$env:LOCALAPPDATA\nvim"
-    #    Type   = "Dir" }
+    # Neovim
+    @{ Source = "nvim"
+       Target = "$env:LOCALAPPDATA\nvim"
+       Type   = "Dir" }
 
     # @{ Source = "git\.gitconfig"
     #    Target = "$HOME\.gitconfig"
