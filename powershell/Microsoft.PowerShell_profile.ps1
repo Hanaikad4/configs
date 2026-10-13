@@ -16,9 +16,11 @@ Set-Alias -Name v -Value nvim
 # gp es un alias propio de PowerShell (Get-ItemProperty), hay que quitarlo antes.
 # Se usa Remove-Item porque Remove-Alias no existe en Windows PowerShell 5.
 Remove-Item Alias:gp -Force -ErrorAction SilentlyContinue
+Remove-Item Alias:gs -Force -ErrorAction SilentlyContinue
 
 function gcl { git clone $args }
 function gpl { git pull $args }
 function gp  { git push $args }
 function ga  { git add $args }
 function gf  { git fetch $args }
+function gs  { git status $args }
