@@ -1,7 +1,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 local group = vim.api.nvim_create_augroup('user', { clear = true })
 
--- Números relativos solo en modo normal (vim.smartRelativeLine de VSCodeVim)
+-- Relative numbers only in normal mode (VSCodeVim's vim.smartRelativeLine)
 autocmd({ 'InsertEnter', 'FocusLost', 'WinLeave' }, {
   group = group,
   callback = function()
@@ -15,7 +15,7 @@ autocmd({ 'InsertLeave', 'FocusGained', 'WinEnter' }, {
   end,
 })
 
--- Resalta brevemente el texto copiado
+-- Briefly highlight yanked text
 autocmd('TextYankPost', {
   group = group,
   callback = function() vim.hl.on_yank() end,

@@ -1,5 +1,5 @@
--- Punto de entrada de Neovim
--- El leader tiene que definirse antes de cargar plugins y atajos
+-- Neovim entry point
+-- Leader must be set before loading plugins and keymaps
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 

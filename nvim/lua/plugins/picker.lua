@@ -1,5 +1,5 @@
--- Buscador: paleta de comandos, abrir archivo rápido, buscar en el proyecto
--- Usa el picker de snacks.nvim (https://github.com/folke/snacks.nvim)
+-- Picker: command palette, quick open, project search
+-- Uses the snacks.nvim picker (https://github.com/folke/snacks.nvim)
 return {
   'folke/snacks.nvim',
   lazy = false,
@@ -8,18 +8,18 @@ return {
     picker = { enabled = true },
   },
   keys = {
-    -- Ctrl+Shift+P y Ctrl+Shift+F los usa WezTerm, por eso se usa F1 (también abre la paleta en VS Code)
-    { '<F1>', function() Snacks.picker.commands() end, desc = 'Paleta de comandos' },
-    { '<C-p>', function() Snacks.picker.files() end, desc = 'Abrir archivo (Quick Open)' },
-    { '<C-f>', function() Snacks.picker.lines() end, desc = 'Buscar en el archivo' },
+    -- WezTerm uses Ctrl+Shift+P and Ctrl+Shift+F, so F1 is used instead (it also opens the palette in VS Code)
+    { '<F1>', function() Snacks.picker.commands() end, desc = 'Command palette' },
+    { '<C-p>', function() Snacks.picker.files() end, desc = 'Open file (Quick Open)' },
+    { '<C-f>', function() Snacks.picker.lines() end, desc = 'Search in file' },
 
-    { '<leader>ff', function() Snacks.picker.files() end, desc = 'Archivos' },
-    { '<leader>fg', function() Snacks.picker.grep() end, desc = 'Buscar texto en el proyecto' },
-    { '<leader>fw', function() Snacks.picker.grep_word() end, desc = 'Buscar palabra bajo el cursor', mode = { 'n', 'x' } },
-    { '<leader>fb', function() Snacks.picker.buffers() end, desc = 'Tabs abiertas' },
-    { '<leader>fr', function() Snacks.picker.recent() end, desc = 'Archivos recientes' },
-    { '<leader>fk', function() Snacks.picker.keymaps() end, desc = 'Atajos de teclado' },
-    { '<leader>fh', function() Snacks.picker.help() end, desc = 'Ayuda' },
-    { '<leader><leader>', function() Snacks.picker.resume() end, desc = 'Reabrir última búsqueda' },
+    { '<leader>ff', function() Snacks.picker.files() end, desc = 'Files' },
+    { '<leader>fg', function() Snacks.picker.grep() end, desc = 'Search text in project' },
+    { '<leader>fw', function() Snacks.picker.grep_word() end, desc = 'Search word under cursor', mode = { 'n', 'x' } },
+    { '<leader>fb', function() Snacks.picker.buffers() end, desc = 'Open tabs' },
+    { '<leader>fr', function() Snacks.picker.recent() end, desc = 'Recent files' },
+    { '<leader>fk', function() Snacks.picker.keymaps() end, desc = 'Keymaps' },
+    { '<leader>fh', function() Snacks.picker.help() end, desc = 'Help' },
+    { '<leader><leader>', function() Snacks.picker.resume() end, desc = 'Resume last search' },
   },
 }

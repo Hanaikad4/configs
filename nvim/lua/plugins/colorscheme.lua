@@ -1,11 +1,11 @@
--- Tema Kanso (el mismo que "Kanso Zen" de VS Code)
+-- Kanso theme (same as VS Code's "Kanso Zen")
 return {
   'webhooked/kanso.nvim',
   lazy = false,
-  priority = 1000, -- cargar antes que el resto para que todo use estos colores
+  priority = 1000, -- load before everything else so all UI uses these colors
   config = function()
     require('kanso').setup {
-      transparent = true, -- deja ver la transparencia de WezTerm
+      transparent = true, -- let WezTerm's transparency show through
     }
     vim.cmd.colorscheme 'kanso-zen'
   end,
