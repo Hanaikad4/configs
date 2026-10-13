@@ -82,9 +82,14 @@ $links = @(
        Target = "$HOME\.config\wezterm"
        Type   = "Dir" }
 
-    # @{ Source = "powershell\Microsoft.PowerShell_profile.ps1"
-    #    Target = "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
-    #    Type   = "File" }
+    # PowerShell (el mismo perfil para PowerShell 7 y Windows PowerShell 5)
+    @{ Source = "powershell\Microsoft.PowerShell_profile.ps1"
+       Target = "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+       Type   = "File" }
+
+    @{ Source = "powershell\Microsoft.PowerShell_profile.ps1"
+       Target = "$HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
+       Type   = "File" }
 
     # @{ Source = "nvim"
     #    Target = "$env:LOCALAPPDATA\nvim"
