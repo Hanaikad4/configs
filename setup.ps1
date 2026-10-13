@@ -77,6 +77,11 @@ $links = @(
        Target = "$HOME/.claude/settings.json"
        Type   = "File" }
 
+    # WezTerm
+    @{ Source = "wezterm"
+       Target = "$HOME\.config\wezterm"
+       Type   = "Dir" }
+
     # @{ Source = "powershell\Microsoft.PowerShell_profile.ps1"
     #    Target = "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
     #    Type   = "File" }
