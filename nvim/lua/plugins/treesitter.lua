@@ -5,14 +5,40 @@
 
 local parsers = {
   -- Neovim / config
-  'lua', 'vim', 'vimdoc', 'query', 'regex', 'bash', 'powershell',
-  'markdown', 'markdown_inline', 'json', 'yaml', 'toml',
+  'lua',
+  'vim',
+  'vimdoc',
+  'query',
+  'regex',
+  'bash',
+  'powershell',
+  'markdown',
+  'markdown_inline',
+  'json',
+  'yaml',
+  'toml',
   -- Web
-  'html', 'css', 'scss', 'javascript', 'typescript', 'tsx', 'jsdoc', 'astro', 'vue',
+  'html',
+  'css',
+  'scss',
+  'javascript',
+  'typescript',
+  'tsx',
+  'jsdoc',
+  'astro',
+  'vue',
   -- Other languages
-  'python', 'go', 'gomod', 'php', 'ruby', 'sql', 'dockerfile',
+  'python',
+  'go',
+  'gomod',
+  'php',
+  'ruby',
+  'sql',
+  'dockerfile',
   -- Git
-  'gitignore', 'gitcommit', 'diff',
+  'gitignore',
+  'gitcommit',
+  'diff',
 }
 
 return {

@@ -2,12 +2,12 @@
 	"expdeffunc": {
 		"prefix": "expdeffunc",
 		"body": [
-			"export default function Example(){\r",
-			"    return(\r",
-			"        <>\r",
-			"\r",
-			"        </>\r",
-			"    )\r",
+			"export default function Example(){",
+			"    return(",
+			"        <>",
+			"",
+			"        </>",
+			"    )",
 			"}"
 		],
 		"description": "expdeffunc"

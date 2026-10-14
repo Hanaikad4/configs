@@ -23,7 +23,11 @@ return {
     'mason-org/mason-lspconfig.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
-      { 'mason-org/mason.nvim', cmd = { 'Mason', 'MasonInstall', 'MasonUpdate' }, opts = { ui = { border = 'rounded' } } },
+      {
+        'mason-org/mason.nvim',
+        cmd = { 'Mason', 'MasonInstall', 'MasonUpdate' },
+        opts = { ui = { border = 'rounded' } },
+      },
       'neovim/nvim-lspconfig', -- provides the base config for each server
       'saghen/blink.cmp',
     },
@@ -56,7 +60,8 @@ return {
               globalPlugins = {
                 {
                   name = '@vue/typescript-plugin',
-                  location = vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+                  location = vim.fn.stdpath 'data'
+                    .. '/mason/packages/vue-language-server/node_modules/@vue/language-server',
                   languages = { 'vue' },
                   configNamespace = 'typescript',
                 },
@@ -128,7 +133,12 @@ return {
       })
 
       -- Project-wide diagnostics list (Problems panel, Ctrl+Shift+M)
-      vim.keymap.set('n', '<leader>fd', function() Snacks.picker.diagnostics() end, { desc = 'Problems (errors/warnings)' })
+      vim.keymap.set(
+        'n',
+        '<leader>fd',
+        function() Snacks.picker.diagnostics() end,
+        { desc = 'Problems (errors/warnings)' }
+      )
     end,
   },
 
@@ -137,6 +147,7 @@ return {
     'saghen/blink.cmp',
     version = '1.*', -- uses the prebuilt fuzzy matcher binary
     event = 'InsertEnter',
+    dependencies = { 'rafamadriz/friendly-snippets' }, -- common snippets per language, like VS Code's built-in ones
     opts = {
       keymap = {
         -- Enter accepts, so does Tab (like VS Code), Ctrl+Space opens the menu, arrows or Ctrl+n/p to navigate
@@ -153,6 +164,15 @@ return {
         default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
         providers = {
           lazydev = { name = 'LazyDev', module = 'lazydev.integrations.blink', score_offset = 100 },
+          snippets = {
+            opts = {
+              -- Reuse the VS Code snippets from this repo (C:\configs\vscode\snippets).
+              -- fs_realpath resolves the %LOCALAPPDATA%\nvim junction to the repo path.
+              search_paths = {
+                vim.fs.joinpath(vim.uv.fs_realpath(vim.fn.stdpath 'config'), '..', 'vscode', 'snippets'),
+              },
+            },
+          },
         },
       },
     },
